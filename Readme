@@ -1,0 +1,17 @@
+Tables in DB:-
+Student table -> tbl_student,
+student_sequence
+course
+courseMaterial
+teachers
+student_course_map
+
+Guardian is a embadable class embaded in student table
+
+course and courseMaterial are one to one relation
+
+courseMaterial doesn't exists individual. So, extra column have to create in courseMaterial
+
+1 teacher can teach many courses... (teacher ---one to many---> course)
+
+student and courses are many to many relation
