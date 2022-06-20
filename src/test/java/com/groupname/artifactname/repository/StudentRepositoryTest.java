@@ -20,7 +20,7 @@ class StudentRepositoryTest {
     public void saveStudent(){
         Student student = Student.builder()
                 .studentName("Rajesh")
-                .emailId("mail@email.com")
+                .emailId("mil@email.com")
 //                .gardianName("RAN")
                 .mobileNumber(Long.valueOf("9640432623"))
                 .build();

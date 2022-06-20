@@ -6,12 +6,13 @@ courseMaterial
 teachers
 student_course_map
 
+one_uni_one_f
+one_uni_one_s
+
+
+-> StudentRepo - contains quaries
+-> CourseRepositoryTest - pagination, pagination with sorting
+
 Guardian is a embadable class embaded in student table
 
-course and courseMaterial are one to one relation
-
-courseMaterial doesn't exists individual. So, extra column have to create in courseMaterial
-
-1 teacher can teach many courses... (teacher ---one to many---> course)
-
-student and courses are many to many relation
+one_uni_one_f one to one map with one_uni_one_s

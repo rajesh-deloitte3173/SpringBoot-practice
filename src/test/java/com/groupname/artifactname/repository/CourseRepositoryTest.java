@@ -86,7 +86,7 @@ class CourseRepositoryTest {
                         .and(Sort.by("credits"))
         );
 
-        List<Course> courses = courseRepository.findAll(sortByTiTleAndCredits).getContent();
+        List<Course> courses = courseRepository.findAll(sortByTitle).getContent();
 
         System.out.println("courses "+ courses);
     }
@@ -111,8 +111,8 @@ class CourseRepositoryTest {
         Student student = Student
                 .builder()
                 .studentName("buchi")
-                .mobileNumber(Long.valueOf("9876543210"))
-                .emailId("buchi@gmail.com")
+                .mobileNumber(Long.valueOf("9870543210"))
+                .emailId("buchii@gmail.com")
                 .build();
 
         Course course = Course
