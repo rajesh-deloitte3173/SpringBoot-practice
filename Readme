@@ -8,6 +8,9 @@ student_course_map
 
 one_uni_one_f
 one_uni_one_s
+company
+employ
+project
 
 
 -> StudentRepo - contains quaries
@@ -15,4 +18,6 @@ one_uni_one_s
 
 Guardian is a embadable class embaded in student table
 
-one_uni_one_f one to one map with one_uni_one_s
+one_uni_one_f <one to one> map with one_uni_one_s
+company <one to many> with employ
+employ <many to many> with project

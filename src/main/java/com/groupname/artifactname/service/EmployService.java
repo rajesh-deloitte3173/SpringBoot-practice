@@ -2,6 +2,7 @@ package com.groupname.artifactname.service;
 
 import com.groupname.artifactname.entity.Company;
 import com.groupname.artifactname.entity.Employ;
+import com.groupname.artifactname.entity.Project;
 import com.groupname.artifactname.repository.CompanyRepository;
 import com.groupname.artifactname.repository.EmployRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,9 @@ public class EmployService {
 
     public List<Employ> getAllEmployes() {
         return employRepository.findAll();
+    }
+
+    public List<Project> getEmployProjects(int eId) {
+        return employRepository.findById(eId).get().getProjects();
     }
 }

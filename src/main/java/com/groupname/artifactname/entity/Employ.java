@@ -1,11 +1,13 @@
 package com.groupname.artifactname.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,5 +23,13 @@ public class Employ {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "employs")
+    private List<Project> projects;
+
+    public void addProject(Project project){
+        projects.add(project);
+    }
 
 }
