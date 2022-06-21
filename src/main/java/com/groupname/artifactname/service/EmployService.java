@@ -20,8 +20,8 @@ public class EmployService {
 
     public Employ addEmploy(Employ employ, int cId) {
         Company company = companyRepository.findById(cId).get();
+        company.addEmploy(employ);
         employ.setCompany(company);
-
         return employRepository.save(employ);
     }
 

@@ -1,11 +1,11 @@
 package com.groupname.artifactname.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,5 +18,14 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
+    private List<Employ> employs = new ArrayList<>();
+
+    public void addEmploy(Employ employ){
+        employs.add(employ);
+        setEmploys(employs);
+    }
 
 }

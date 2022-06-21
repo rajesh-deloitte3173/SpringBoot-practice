@@ -1,6 +1,7 @@
 package com.groupname.artifactname.controller;
 
 import com.groupname.artifactname.entity.Company;
+import com.groupname.artifactname.entity.Employ;
 import com.groupname.artifactname.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,5 +26,11 @@ public class CompanyController {
     @GetMapping
     private List<Company> getAllCopanies(){
         return companyService.getAllCompanies();
+    }
+
+    @CrossOrigin
+    @GetMapping("/{id}/employes")
+    private List<Employ> getEmployesOfCompany(@PathVariable("id") int cId){
+        return companyService.getEmployesOfCompany(cId);
     }
 }
