@@ -21,3 +21,65 @@ Guardian is a embadable class embaded in student table
 one_uni_one_f <one to one> map with one_uni_one_s
 company <one to many> with employ
 employ <many to many> with project
+
+
+@GeneratedValue(strategy = <a>)
+    <a> -> GenerationType.AUTO  ---> by default
+        -> GenerationType.IDENTITY  ---> not the best one from performance point of view
+        -> GenerationType.SEQUENCE  ---> generate primary key values and uses a database sequence to generate unique values
+        -> GenerationType.TABLE  ---> rarely used, slows down your application
+
+    Eg:- @SequenceGenerator(
+                     name = "course_sequency",
+                     sequenceName = "course_sequency",
+                     allocationSize = 1
+             )
+          @GeneratedValue(
+                     strategy = GenerationType.SEQUENCE,
+                     generator = "course_sequency"
+             )
+
+    Eg:- @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+Cascade = <a>
+    <a> -> CascadeType.ALL
+        -> CascadeType.PERSIST
+        -> CascadeType.MERGE
+        -> CascadeType.REMOVE
+        -> CascadeType.REFRESH
+        -> CascadeType.DETACH
+
+        above cascade types available in javax.persistence.CascadeType
+        below cascade types (hibernate specific once) available in org.hibernate.annotation.CascadeType
+
+    <a> -> CascadeType.REPLICATE
+        -> CascadeType.SAVE_UPDATE
+        -> CascadeType.LOCK
+
+    CascadeType.ALL ---> propagates all operations
+
+    Eg:- consider person <one to many> relation with address
+
+    CascadeType.PERSIST  ---> When we save the person entity, the address entity will also get saved.
+
+Validations:
+    in pom.xml file add spring-boot-starter-validation
+    In rest controller -> in function parameter add @Valid  (eg: @Valid @RequestBody Student student)
+    In entity add below @ as per need
+
+    @AssertFalse  ->  value of incoming request should be boolean false
+    @AsserTrue   ->  value of incoming request should be boolean true
+    @Past   ->  It is for date, date should be in past
+    @Future  -> It is for date, date should be in future
+    @Max(value = 100, message = "the maxvalue should be 100")
+    @Min
+    @Size(max =100)
+    @NotNull
+    @Pattern   ->  Incoming value should be match with regular expression
+
+
+Date format:
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date date;
+
+    -> send date as string in postman
