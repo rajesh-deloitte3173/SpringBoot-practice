@@ -11,6 +11,7 @@ one_uni_one_s
 company
 employ
 project
+validations  -> validations and date
 
 
 -> StudentRepo - contains quaries
@@ -83,3 +84,33 @@ Date format:
     private Date date;
 
     -> send date as string in postman
+
+JUnit:-
+    some asserts:
+        assertEquals(6,result);
+        assertTrue(true);
+        assertFalse(false);
+        assertNull()
+        assertNotNull()
+
+    some @:
+        @Test -> before test case
+        @BeforeEach  -> test runs before every test
+        @AfterEach  -> test runs after every test
+        @BeforeAll  -> test runs before class (note: class level, static method)
+        @AfterAll  -> test runs after class (note: class level, static method)
+
+    Mockito:
+        @Mock
+        @InjectMocks
+
+        when('methodCall').thenReturn('returnValue');
+        when('methodCall').thenReturn('returnValue').thenReturn('returnValue');
+
+Enums:-
+    Java Enums are classes that have a fixed set of constants or variables that do not tend to change. Java Enums constants are static and final implicitly.
+
+    enums creates static final Objects for every variable in background
+    enums can implements interfaces
+
+    ordinal() -> returns order of obj

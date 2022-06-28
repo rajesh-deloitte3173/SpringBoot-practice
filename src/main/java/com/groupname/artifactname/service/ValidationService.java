@@ -18,6 +18,19 @@ public class ValidationService {
     }
 
     public List<Validations> getValidations() {
-        return validationRepository.findAll();
+
+        List<Validations> validations =  validationRepository.findAll();
+        System.out.println("Month: "+validations.get(0).getLocalDate().getMonth());
+        System.out.println("getDayOfMonth: "+validations.get(0).getLocalDate().getDayOfMonth());
+        System.out.println("getDayOfWeek: "+validations.get(0).getLocalDate().getDayOfWeek());
+        System.out.println("getDayOfYear: "+validations.get(0).getLocalDate().getDayOfYear());
+        System.out.println("getMonthValue: "+validations.get(0).getLocalDate().getMonthValue());
+        System.out.println("year: "+validations.get(0).getLocalDate().getYear());
+
+        System.out.println("Hour: "+validations.get(0).getLocalTime().getHour());
+        System.out.println("Min: "+validations.get(0).getLocalTime().getMinute());
+        System.out.println("sec: "+validations.get(0).getLocalTime().getSecond());
+        System.out.println("Nano: "+validations.get(0).getLocalTime().getNano());
+        return validations;
     }
 }

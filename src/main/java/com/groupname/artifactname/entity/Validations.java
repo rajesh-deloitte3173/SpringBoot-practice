@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -44,4 +46,10 @@ public class Validations {
 
     @JsonFormat(pattern = "yyyy/MM/dd")
     private Date date;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate localDate;
+
+    private LocalTime localTime;
+
 }

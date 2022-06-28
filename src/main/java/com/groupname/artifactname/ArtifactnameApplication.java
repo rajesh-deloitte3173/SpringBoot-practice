@@ -10,6 +10,10 @@ public class ArtifactnameApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ArtifactnameApplication.class, args);
+
+		for (EnumsT mobile : EnumsT.values()){
+			System.out.println("Enums: "+ mobile + " Index: "+mobile.ordinal() + " Price: " + mobile.getPrice());
+		}
 	}
 
 }
