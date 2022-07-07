@@ -27,11 +27,11 @@ public class Question {
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers;
 
-    public void addAnswer(Answer answer){
-        if (answers.isEmpty()){
-            answers = new ArrayList<>();
-        }
-        answers.add(answer);
-    }
+//    public void addAnswer(Answer answer){
+//        if (answers.isEmpty()){
+//            answers = new ArrayList<>();
+//        }
+//        answers.add(answer);
+//    }
 
 }

@@ -28,8 +28,8 @@ public class Employ {
     @ManyToMany(mappedBy = "employs")
     private List<Project> projects;
 
-    public void addProject(Project project){
-        projects.add(project);
-    }
+//    public void addProject(Project project){
+//        projects.add(project);
+//    }
 
 }

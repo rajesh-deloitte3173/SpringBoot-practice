@@ -21,11 +21,12 @@ public class Company {
 
     @JsonIgnore
     @OneToMany(mappedBy = "company")
-    private List<Employ> employs = new ArrayList<>();
+    private List<Employ> employs;
+//    private List<Employ> employs = new ArrayList<>();
 
-    public void addEmploy(Employ employ){
-        employs.add(employ);
-        setEmploys(employs);
-    }
+//    public void addEmploy(Employ employ){
+//        employs.add(employ);
+//        setEmploys(employs);
+//    }
 
 }

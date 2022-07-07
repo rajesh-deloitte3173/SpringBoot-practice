@@ -27,7 +27,7 @@ public class AnswerService {
     public Answer addAnswer(Answer answer, int qId) {
         Question question = questionRepository.findById(qId).get();
         answer.setQuestion(question);
-        question.addAnswer(answer);
+//        question.addAnswer(answer);
 //        questionRepository.save(question);
         return answerRepository.save(answer);
     }

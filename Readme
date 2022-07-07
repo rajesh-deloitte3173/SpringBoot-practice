@@ -5,6 +5,9 @@ course
 courseMaterial
 teachers
 student_course_map
+question
+answer
+content
 
 one_uni_one_f
 one_uni_one_s
@@ -16,13 +19,15 @@ validations  -> validations and date
 
 -> StudentRepo - contains quaries
 -> CourseRepositoryTest - pagination, pagination with sorting
+-> StudentService - throws exception
 
 Guardian is a embadable class embaded in student table
 
 one_uni_one_f <one to one> map with one_uni_one_s
 company <one to many> with employ
 employ <many to many> with project
-
+question <one to many> with answer
+answer <many to many> with content
 
 @GeneratedValue(strategy = <a>)
     <a> -> GenerationType.AUTO  ---> by default
@@ -66,7 +71,7 @@ Cascade = <a>
 Validations:
     in pom.xml file add spring-boot-starter-validation
     In rest controller -> in function parameter add @Valid  (eg: @Valid @RequestBody Student student)
-    In entity add below @ as per need
+    In entity add below @s as per need
 
     @AssertFalse  ->  value of incoming request should be boolean false
     @AsserTrue   ->  value of incoming request should be boolean true

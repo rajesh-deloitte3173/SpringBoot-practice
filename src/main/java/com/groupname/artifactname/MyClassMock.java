@@ -3,7 +3,7 @@ package com.groupname.artifactname;
 import java.util.Arrays;
 
 public class MyClassMock {
-    private final DataServiceMock dataServiceMock;
+    private DataServiceMock dataServiceMock;
 
     public MyClassMock(DataServiceMock dataServiceMock) {
         super();

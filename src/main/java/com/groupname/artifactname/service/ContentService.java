@@ -31,9 +31,9 @@ public class ContentService {
         Content content = contentRepository.findById(cId).get();
 
         content.addAnstoCont(answer);
-        answer.addContToAns(content);
+//        answer.addContToAns(content);
 
-        answerRepository.save(answer);
+//        answerRepository.save(answer);
         contentRepository.save(content);
     }
 

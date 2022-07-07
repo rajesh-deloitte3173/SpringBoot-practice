@@ -27,7 +27,7 @@ public class Content {
             joinColumns = {@JoinColumn(name = "content_id")},
             inverseJoinColumns = {@JoinColumn(name = "answer_id")}
     )
-    private List<Answer> answers = new ArrayList<>();
+    private List<Answer> answers;
 
     public void addAnstoCont(Answer answer){
         answers.add(answer);

@@ -29,7 +29,7 @@ public class ProjectService {
     public Project addEmployToProject(int pId, int eId) {
         Project project = projectRepository.findById(pId).get();
         Employ employ = employRepository.findById(eId).get();
-        employ.addProject(project);
+//        employ.addProject(project);
         project.addEmploy(employ);
         return projectRepository.save(project);
     }

@@ -30,9 +30,9 @@ public class Answer {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "answers")
-    private List<Content> contents = new ArrayList<>();
+    private List<Content> contents;
 
-    public void addContToAns(Content content){
-        contents.add(content);
-    }
+//    public void addContToAns(Content content){
+//        contents.add(content);
+//    }
 }

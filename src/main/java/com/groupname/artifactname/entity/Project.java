@@ -27,7 +27,8 @@ public class Project {
             joinColumns = {@JoinColumn(name = "project_id")},
             inverseJoinColumns = {@JoinColumn(name = "employ_id")}
     )
-    private List<Employ> employs = new ArrayList<>();
+    private List<Employ> employs;
+//    private List<Employ> employs = new ArrayList<>();
 
     public void addEmploy(Employ employ){
         employs.add(employ);
